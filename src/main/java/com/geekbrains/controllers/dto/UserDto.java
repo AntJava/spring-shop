@@ -16,6 +16,6 @@ public class UserDto {
     private String email;
     @NotNull(message = "Возраст пользователя должен быть не пустым.")
     private Integer age;
-    @NotNull(message = "Тип пользователя не указан.")
+    //@NotNull(message = "Тип пользователя не указан.")
     private UserType userType;
 }
