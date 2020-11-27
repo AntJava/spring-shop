@@ -50,7 +50,7 @@ create table users_roles (
 
 insert into roles (name)
 values
-('ROLE_CUSTOMER'), ('ROLE_MANAGER'), ('ROLE_ADMIN');
+('ROLE_USER'), ('ROLE_MANAGER'), ('ROLE_ADMIN');
 
 insert into users (phone, password, first_name, last_name, email)
 values
