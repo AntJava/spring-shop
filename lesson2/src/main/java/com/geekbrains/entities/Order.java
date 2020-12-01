@@ -32,6 +32,8 @@ public class Order {
 
     private Status status;
 
+    public Order(){}
+
     public enum Status {
         MANAGING, DELIVERING, DELIVERED
     }

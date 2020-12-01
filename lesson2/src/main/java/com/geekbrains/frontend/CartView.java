@@ -49,11 +49,13 @@ public class CartView extends AbstractView {
         TextField phoneField = initTextFieldWithPlaceholder("Введите номер телефона");
 
         Button toOrderButton = new Button("Создать заказ", e -> {
-            cartService.setAddress(addressField.getValue());
-            cartService.setPhone(phoneField.getValue());
-            orderService.saveOrder();
-
-            Notification.show("Заказ успешно сохранён и передан менеджеру");
+            System.out.println(phoneField.getValue());
+            if (phoneField.getValue().matches("^8\\d{10}$")) {
+                cartService.setAddress(addressField.getValue());
+                cartService.setPhone(phoneField.getValue());
+                orderService.saveOrder();
+                Notification.show("Заказ успешно сохранён и передан менеджеру");
+            } else Notification.show("Номер должен содержать только цифры и иметь вид 89999999999");
         });
 
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);

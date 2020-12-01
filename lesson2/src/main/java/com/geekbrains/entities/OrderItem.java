@@ -14,7 +14,7 @@ public class OrderItem {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Product product;
 
     private BigDecimal price;
@@ -38,6 +38,7 @@ public class OrderItem {
     }
 
     public void decrement() {
+
         if (this.quantity-- <= 0) this.quantity = 0;
         this.price = new BigDecimal(this.quantity * product.getPrice().doubleValue());
     }
