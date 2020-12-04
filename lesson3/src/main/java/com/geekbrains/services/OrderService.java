@@ -6,6 +6,7 @@ import com.geekbrains.entities.User;
 import com.geekbrains.repositories.OrderItemRepository;
 import com.geekbrains.repositories.OrderRepository;
 import io.swagger.models.apideclaration.Items;
+import com.geekbrains.aspect.Log;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,6 +33,7 @@ public class OrderService {
         this.orderItemRepository = orderItemRepository;
     }
 
+    @Log
     public void saveOrder() {
         User user = userService.findById(1L);
 
